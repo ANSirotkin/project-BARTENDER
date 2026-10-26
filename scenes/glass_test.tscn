@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cgiy1bwo1tk30"]
+
+[ext_resource type="Shader" uid="uid://upwcu4jikxim" path="res://shaders/liquid.gdshader" id="1_pjk0y"]
+[ext_resource type="Script" uid="uid://mhihpsnb8j31" path="res://scripts/views/glass_view.gd" id="2_h2md6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pxps0"]
+shader = ExtResource("1_pjk0y")
+shader_parameter/palette_size = 5.0
+shader_parameter/pixel_mode = true
+shader_parameter/blur_px = 1.5
+shader_parameter/threshold = 0.5
+shader_parameter/softness = 0.15
+shader_parameter/opacity = 0.9
+
+[node name="Control" type="Control" unique_id=619640179]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1634939010]
+texture_filter = 2
+material = SubResource("ShaderMaterial_pxps0")
+layout_mode = 0
+offset_left = 518.0
+offset_top = 269.0
+offset_right = 619.0
+offset_bottom = 379.0
+mouse_filter = 0
+expand_mode = 1
+script = ExtResource("2_h2md6")
+grid_w = 30
+grid_h = 30
